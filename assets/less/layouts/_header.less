@@ -1,1 +1,27 @@
-.banner { }
+.banner {
+  margin-bottom: 0;
+  background: url("@{img-path}/ghost-kitchen.png") no-repeat right top;
+}
+
+.navbar-brand {
+  background: url(@logo) no-repeat;
+  text-indent: -9999px;
+  width: 113px;
+  height: 153px;
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  margin-left: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: right;
+    margin-top: 148px;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 16px;
+}

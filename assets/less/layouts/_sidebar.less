@@ -1,1 +1,23 @@
-.sidebar { }
+.sidebar {
+
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul > li > a {
+  font-size: 16px;
+  padding: 5px 0;
+  display: block;
+  color: @color-sidebar-link;
+  &:hover {
+    color: @color-sidebar-link-hover;
+    text-decoration: none;
+  }
+}
+
+.sidebar ul > li.active > a {
+  color: @color-sidebar-link-hover;
+}
