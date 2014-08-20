@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="mebelsale" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.less">
+  <component name="PublishConfigData" autoUpload="Always" serverName="mebelstil-sale.ru" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.less">
     <serverData>
       <paths name="mebelsale">
         <serverdata>
@@ -11,6 +11,13 @@
             <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
             <excludedPath local="true" path="$PROJECT_DIR$/node_modules" />
           </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="mebelstil-sale.ru">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/wp-content/themes/mebelsale" local="$PROJECT_DIR$" web="/" />
+          </mappings>
         </serverdata>
       </paths>
     </serverData>
