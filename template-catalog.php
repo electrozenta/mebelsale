@@ -60,7 +60,7 @@ Template Name: Каталог
                 <div class="mb-furniture-item">
                     <?php echo get_the_post_thumbnail( $item->ID, array(200, 200) ); ?>
 <!--                    <img src="--><?php //echo $attachment_url; ?><!--" alt="--><?php //if (count($alt)) echo $alt; ?><!--"/>-->
-                    <h2><a href="<?php echo get_page_link($item->ID); ?>"><?php echo $item->post_title; ?></a></h2>
+                    <h3><a href="<?php echo get_page_link($item->ID); ?>"><?php echo $item->post_title; ?></a></h3>
                     <p><?php echo "Цена: ".$price." руб."; ?></p>
                     <a href="<?php echo get_page_link($item->ID); ?>">подробнее...</a>
                     <a href="#" class="btn" role="button">купить</a>
