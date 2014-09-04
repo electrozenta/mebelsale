@@ -20,7 +20,7 @@ Template Name: Главная Страница
                 ?>
                 <div class="col-xs-6 col-md-4">
                     <h2><a href="<?php echo get_page_link($page_id); ?>"
-                           style="background-image:url(<?php echo $attachment_url; ?>);"><?php echo $page->post_title; ?></a>
+                           style="background-image:url(<?php echo $attachment_url; ?>);"  class="mb-box"><?php echo $page->post_title; ?></a>
                     </h2>
                 </div>
             <?php

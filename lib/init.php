@@ -19,6 +19,10 @@ function roots_setup() {
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
 
+  add_image_size( 'furniture thumbnail', 150, 200, array( 'center', 'center' ) );
+  add_image_size( 'furniture details', 200, 260, array( 'center', 'center' ) );
+  add_image_size( 'furniture small', 85, 115, array( 'center', 'center' ) );
+
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
   add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio'));

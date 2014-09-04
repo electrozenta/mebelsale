@@ -23,7 +23,7 @@ Template Name: Каталог
             $url = wp_get_attachment_url( get_post_thumbnail_id($catalog->ID) );
             ?>
             <div class="col-xs-6 col-md-4">
-                <h2><a href="<?php echo get_page_link($catalog->ID); ?>" style="background-image:url(<?php echo $url; ?>);"><?php echo $catalog->post_title; ?></a></h2>
+                <h2><a href="<?php echo get_page_link($catalog->ID); ?>" style="background-image:url(<?php echo $url; ?>);" class="mb-box"><?php echo $catalog->post_title; ?></a></h2>
             </div>
         <?php
         }
@@ -57,13 +57,13 @@ Template Name: Каталог
 
             ?>
             <li class="col-sm-6 col-md-4">
-                <div class="mb-furniture-item">
-                    <?php echo get_the_post_thumbnail( $item->ID, array(200, 200) ); ?>
+                <div class="mb-furniture-item mb-box">
+                    <?php echo get_the_post_thumbnail( $item->ID, 'furniture thumbnail', array('class' => "img-responsive")); ?>
 <!--                    <img src="--><?php //echo $attachment_url; ?><!--" alt="--><?php //if (count($alt)) echo $alt; ?><!--"/>-->
                     <h3><a href="<?php echo get_page_link($item->ID); ?>"><?php echo $item->post_title; ?></a></h3>
                     <p><?php echo "Цена: ".$price." руб."; ?></p>
-                    <a href="<?php echo get_page_link($item->ID); ?>">подробнее...</a>
-                    <a href="#" class="btn" role="button">купить</a>
+                    <a href="<?php echo get_page_link($item->ID); ?>" class="mb-details">подробнее...</a>
+                    <a href="#" class="mb-btn-buy" role="button">купить</a>
                 </div>
             </li>
         <?php
