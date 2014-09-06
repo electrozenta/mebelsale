@@ -4,4 +4,6 @@
   </div>
 </footer>
 
+<?php get_template_part('templates/form', 'order'); ?>
+
 <?php wp_footer(); ?>
