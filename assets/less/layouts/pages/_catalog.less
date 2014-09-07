@@ -3,11 +3,17 @@
   padding: 0;
 }
 
+.mb-furniture .col-xs-6 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .mb-furniture-item {
-  padding: 10px 15px;
+  padding: 5px 5px 10px;
   border-radius: 2px;
   text-align: center;
-  margin-top: 30px;
+  margin: 15px auto 0;
+  max-width: 170px;
 }
 
 .mb-furniture-item img {
@@ -55,4 +61,19 @@
   background: -ms-linear-gradient(top, rgba(223,237,244,1) 0%,rgba(205,199,191,1) 100%);
   background: linear-gradient(to bottom, rgba(223,237,244,1) 0%,rgba(205,199,191,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfedf4', endColorstr='#cdc7bf',GradientType=0 );
+}
+
+
+@media (min-width: 768px) {
+
+  .mb-furniture .col-xs-6 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .mb-furniture-item {
+    padding: 10px 15px;
+    margin: 30px auto 0;
+  }
+
 }

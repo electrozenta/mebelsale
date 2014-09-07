@@ -1,6 +1,5 @@
 .banner {
   margin-bottom: 0;
-  background: url("@{img-path}/ghost-kitchen.png") no-repeat right top;
 }
 
 .navbar-brand {
@@ -16,9 +15,24 @@
 }
 
 @media (min-width: 768px) {
+
+  .banner {
+    background: url("@{img-path}/ghost-kitchen.png") no-repeat right top;
+    background-position: right;
+    background-size: 700px 100%;
+  }
+
+}
+
+
+@media (min-width: 992px) {
   .navbar-nav {
     float: right;
     margin-top: 148px;
+  }
+
+  .banner {
+    background-position: 80%;
   }
 }
 
