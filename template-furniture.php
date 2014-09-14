@@ -8,51 +8,58 @@ Template Name: Мебель
         <?php
 
         $furl = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-        $fimg = get_the_post_thumbnail($page->ID, 'furniture details');
+        $fimg = get_the_post_thumbnail($page->ID, 'furniture details', array(
+            'class' => "img-responsive",
+        ));
 
-        printf('<a href="%s" class="mb-box mb-content">%s</a>', $furl, $fimg);
+        printf('<a href="%s" class="mb-box mb-content" rel=”lightbox[gallery-furniture]”>%s</a>', $furl, $fimg);
 
         $images = CFS()->get('furniture_images');
 
-        foreach ($images as $image) :
-            $id = $image['furniture_image'];
-            $img = wp_get_attachment_image($id, 'furniture small', array(
-                'class' => "img-responsive",
-            ));
-            $url = wp_get_attachment_url($id);
-
-            printf('<a href="%s">%s</a>', $url, $img);
-        endforeach;
         ?>
+        <div class="mb-thumbnail-carousel">
+            <?php
+            foreach ($images as $image) :
+                $id = $image['furniture_image'];
+                $img = wp_get_attachment_image($id, 'furniture small', array(
+                    'class' => "img-responsive",
+                ));
+                $url = wp_get_attachment_url($id);
+
+                printf('<a href="%s" class="mb-box mb-content mb-small" rel=”lightbox[gallery-furniture]”>%s</a>', $url, $img);
+            endforeach;
+            ?>
+        </div>
     </div>
 
-<div class="col-md-8">
-    <div class="furniture-full mb-box mb-content">
-        <?php
+    <div class="col-md-8">
+        <div class="mb-furniture-full mb-box mb-content">
+            <?php
 
-        the_title('<h1>', '</h1>');
+            the_title('<h1>', '</h1>');
 
-        $about_label = CFS()->get_field_info('furniture_about')['label'];
-        $about = CFS()->get('furniture_about');
+            $about_label = CFS()->get_field_info('furniture_about')['label'];
+            $about = CFS()->get('furniture_about');
 
-        echo '<h2>' . $about_label . ':</h2> ' . $about;
-
-
-        $info_label = CFS()->get_field_info('furniture_info')['label'];
-        $info = CFS()->get('furniture_info');
-
-        echo '<h2>' . $info_label . ':</h2> ' . $info;
+            printf('<h2>%s:</h2> %s', $about_label, $about);
 
 
-        $price_label = CFS()->get_field_info('furniture_price')['label'];
-        $price = CFS()->get('furniture_price');
+            $info_label = CFS()->get_field_info('furniture_info')['label'];
+            $info = CFS()->get('furniture_info');
 
-        echo '<p>' . $price_label . ': ' . $price . ' руб.</p>';
+            printf('<h2>%s:</h2> %s', $info_label, $info);
 
-        ?>
 
+            $price_label = CFS()->get_field_info('furniture_price')['label'];
+            $price = CFS()->get('furniture_price');
+
+            printf('<p class="mb-price">%s: %s руб.</p>', $price_label, $price);
+
+            ?>
+            <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order">купить</a>
+            <a href="#">вызвать замерщика</a>
+        </div>
     </div>
-</div>
 </div>
 
 <?php while (have_posts()) : the_post(); ?>
