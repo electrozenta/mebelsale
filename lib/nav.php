@@ -58,7 +58,7 @@ function roots_nav_menu_css_class($classes, $item) {
   $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'active', $classes);
   $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
 
-  $classes[] = 'menu-' . $slug;
+  //$classes[] = 'menu-' . $slug;
 
   $classes = array_unique($classes);
 
