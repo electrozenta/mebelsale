@@ -18,7 +18,7 @@ Template Name: Главная Страница
             if (has_post_thumbnail($page->ID)) :
 
                 ?>
-                <div class="col-xs-6 col-md-4">
+                <div class="col-xs-6 col-sm-4">
                     <h2><a href="<?php echo get_page_link($page_id); ?>"
                            style="background-image:url(<?php echo $attachment_url; ?>);"  class="mb-box"><?php echo $page->post_title; ?></a>
                     </h2>

@@ -20,3 +20,14 @@ function roots_wp_title($title) {
   return $title;
 }
 add_filter('wp_title', 'roots_wp_title', 10);
+
+//add class to CF7 form
+
+add_filter( 'wpcf7_form_class_attr', 'add_custom_form_class_attr' );
+
+function add_custom_form_class_attr( $class ) {
+    $class .= ' form-horizontal';
+    return $class;
+}
+
+define ('WPCF7_AUTOP', false );   // set to false to remove <br> tags
