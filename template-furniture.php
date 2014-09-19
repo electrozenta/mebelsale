@@ -8,8 +8,10 @@ Template Name: Мебель
         <?php
 
         $furl = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+        $falt = CFS()->get('furniture_fimage_alt');
         $fimg = get_the_post_thumbnail($page->ID, 'furniture details', array(
             'class' => "img-responsive",
+            'alt' => trim($falt),
         ));
 
         printf('<a href="%s" class="mb-box mb-content" rel=”lightbox[gallery-furniture]”>%s</a>', $furl, $fimg);
@@ -21,8 +23,10 @@ Template Name: Мебель
             <?php
             foreach ($images as $image) :
                 $id = $image['furniture_image'];
-                $img = wp_get_attachment_image($id, 'furniture small', array(
+                $alt = $image['furniture_image_alt'];
+                $img = wp_get_attachment_image($id, 'furniture small', 0, array(
                     'class' => "img-responsive",
+                    "alt" => trim($alt),
                 ));
                 $url = wp_get_attachment_url($id);
 
