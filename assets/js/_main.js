@@ -23,12 +23,45 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+        var $thumbnailCarousel = $('.mb-thumbnail-carousel.owl-carousel');
+
+        if($thumbnailCarousel){
+            $thumbnailCarousel.owlCarousel({
+                nav: false,
+                responsive:{
+                    0:{
+                        items: 2
+                    },
+                    480:{
+                        items:3
+                    },
+                    768:{
+                        items:5
+                    },
+                    992: {
+                        items: 2
+                    }
+                }
+            });
+        }
     }
   },
   // Home page
   home: {
     init: function() {
       // JavaScript to be fired on the home page
+
+
+        var $homeCarousel = $('.mb-home-carousel.owl-carousel');
+
+        if($homeCarousel){
+            $homeCarousel.owlCarousel({
+                nav: false,
+                loop: true,
+                autoplay: true,
+                items: 1
+            });
+        }
     }
   },
   // About us page, note the change from about-us to about_us.

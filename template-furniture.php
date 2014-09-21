@@ -19,7 +19,7 @@ Template Name: Мебель
         $images = CFS()->get('furniture_images');
 
         ?>
-        <div class="mb-thumbnail-carousel">
+        <div class="mb-thumbnail-carousel owl-carousel">
             <?php
             foreach ($images as $image) :
                 $id = $image['furniture_image'];
@@ -30,7 +30,7 @@ Template Name: Мебель
                 ));
                 $url = wp_get_attachment_url($id);
 
-                printf('<a href="%s" class="mb-box mb-content mb-small" rel=”lightbox[gallery-furniture]”>%s</a>', $url, $img);
+                printf('<a href="%s" class="mb-box mb-content mb-small item" rel=”lightbox[gallery-furniture]”>%s</a>', $url, $img);
             endforeach;
             ?>
         </div>

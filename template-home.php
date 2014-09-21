@@ -3,8 +3,27 @@
 Template Name: Главная Страница
 */
 ?>
+
+<div class="mb-home-carousel owl-carousel">
+    <?php
+    $slides = CFS()->get('home_slides');
+
+    foreach ($slides as $slide) :
+        $title = $slide['home_slide_title'];
+        $content = $slide['home_slide_content'];
+        $img_url = $slide['home_slide_image'];
+
+        printf(
+            '<div class="item" style="background: url(%s)"><h4>%s</h4><div class="mb-slide-content">%s</div></div>',
+            trim($img_url), trim($title), trim($content)
+        );
+    endforeach;
+    ?>
+</div>
+
 <div class="mb-catalog">
     <h2>КАТАЛОГ МЕБЕЛИ</h2>
+
     <div class="row">
         <?php
         $pages = CFS()->get('home_catalogues');
@@ -18,10 +37,12 @@ Template Name: Главная Страница
             if (has_post_thumbnail($page->ID)) :
 
                 ?>
-                <div class="col-xs-6 col-sm-4">
-                    <h3><a href="<?php echo get_page_link($page_id); ?>"
-                           style="background-image:url(<?php echo $attachment_url; ?>);"  class="mb-box"><?php echo $page->post_title; ?></a>
-                    </h3>
+                <div class="col-xs-6 col-sm-4 text-center">
+                    <a href="<?php echo get_page_link($page_id); ?>">
+                        <div class="mb-home-bigbtn mb-box"
+                             style="background-image:url(<?php echo $attachment_url; ?>);"></div>
+                        <h3><?php echo $page->post_title; ?></h3>
+                    </a>
                 </div>
             <?php
 
