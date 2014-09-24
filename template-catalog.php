@@ -59,12 +59,14 @@ Template Name: Каталог
             //$alt = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
             $alt = get_post_meta($item->ID, _aioseop_title, true);
 
+            $url = get_page_link($item->ID);
+
             $price = CFS()->get('furniture_price', $item->ID);
 
             ?>
             <li class="col-xs-6 col-sm-4 col-lg-3">
                 <div class="mb-furniture-item mb-box">
-                    <a href="<?php echo get_page_link($item->ID); ?>">
+                    <a href="<?php echo $url; ?>">
                         <?php echo get_the_post_thumbnail( $item->ID, 'furniture thumbnail', array(
                             'class' => "img-responsive",
                             'alt' => $alt
@@ -73,7 +75,7 @@ Template Name: Каталог
                     <h3><a href="<?php echo get_page_link($item->ID); ?>"><?php echo $item->post_title; ?></a></h3>
                     <p><?php echo "Цена: ".$price." руб."; ?></p>
                     <a href="<?php echo get_page_link($item->ID); ?>" class="mb-details">подробнее...</a>
-                    <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order">купить</a>
+                    <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order" data-url="<?php echo $url; ?>">купить</a>
                 </div>
             </li>
         <?php

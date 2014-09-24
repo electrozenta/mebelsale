@@ -62,10 +62,12 @@ Template Name: Мебель
             $price_label = CFS()->get_field_info('furniture_price')['label'];
             $price = CFS()->get('furniture_price');
 
+            $url = get_permalink();
+
             printf('<p class="mb-price">%s: %s руб.</p>', $price_label, $price);
 
             ?>
-            <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order">купить</a>
+            <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order" data-url="<?php echo $url; ?>">купить</a>
             <a href="#">вызвать замерщика</a>
         </div>
     </div>

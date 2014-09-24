@@ -25,6 +25,12 @@ var Roots = {
       // JavaScript to be fired on all pages
         $('.mb-content').appendTo($('.main'));
 
+        //Order
+        $('a[data-target="#order"]').click(function(e){
+            var url = $(this).data('url');
+            $('input[name="url-furniture"]').val(url);
+        });
+
         var $thumbnailCarousel = $('.mb-thumbnail-carousel.owl-carousel');
 
         if($thumbnailCarousel){
