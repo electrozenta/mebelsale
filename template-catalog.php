@@ -3,6 +3,11 @@
 Template Name: Каталог
 */
 ?>
+
+<?php while (have_posts()) : the_post(); ?>
+    <?php get_template_part('templates/content', 'page'); ?>
+<?php endwhile; ?>
+
 <div class="mb-catalog">
 
     <?php
@@ -77,6 +82,4 @@ Template Name: Каталог
         ?>
     </ul>
 
-<?php while (have_posts()) : the_post(); ?>
-    <?php get_template_part('templates/content', 'page'); ?>
-<?php endwhile; ?>
+

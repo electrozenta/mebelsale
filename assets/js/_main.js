@@ -23,6 +23,8 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+        $('.mb-content').appendTo($('.main'));
+
         var $thumbnailCarousel = $('.mb-thumbnail-carousel.owl-carousel');
 
         if($thumbnailCarousel){
@@ -50,7 +52,6 @@ var Roots = {
   home: {
     init: function() {
       // JavaScript to be fired on the home page
-
 
         var $homeCarousel = $('.mb-home-carousel.owl-carousel');
 

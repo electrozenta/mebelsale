@@ -21,9 +21,15 @@ Template Name: Галерея
 
         foreach ($galleries as $gallery) {
             $url = wp_get_attachment_url( get_post_thumbnail_id($gallery->ID) );
+            $img = get_the_post_thumbnail( $gallery->ID, "medium", array(
+                'class' => 'img-responsive'
+            ) );
+            $title = $gallery->post_title;
             ?>
-            <div class="col-xs-6 col-sm-4 col-lg-3">
-                <h2><a href="<?php echo get_page_link($gallery->ID); ?>" style="background-image:url(<?php echo $url; ?>);" class="mb-box"><?php echo $gallery->post_title; ?></a></h2>
+            <div class="col-xs-6 col-sm-4">
+                <div class="mb-box">
+                    <h2><a href="<?php echo get_page_link($gallery->ID); ?>"><?php echo $img; ?><?php echo $title; ?></a></h2>
+                </div>
             </div>
         <?php
         }

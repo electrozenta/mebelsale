@@ -4,6 +4,10 @@ Template Name: Главная Страница
 */
 ?>
 
+<?php while (have_posts()) : the_post(); ?>
+    <?php get_template_part('templates/content', 'page'); ?>
+<?php endwhile; ?>
+
 <div class="mb-home-carousel owl-carousel">
     <?php
     $slides = CFS()->get('home_slides');
@@ -53,6 +57,4 @@ Template Name: Главная Страница
     </div>
 </div>
 
-<?php while (have_posts()) : the_post(); ?>
-    <?php get_template_part('templates/content', 'page'); ?>
-<?php endwhile; ?>
+
