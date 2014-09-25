@@ -35,11 +35,12 @@ Template Name: Мебель
             printf('<p class="mb-price">%s: %s руб.</p>', $price_label, $price);
 
             ?>
-            <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order" data-url="<?php echo $url; ?>">купить</a>
+            <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order"
+               data-url="<?php echo $url; ?>">купить</a>
             <a href="#">вызвать замерщика</a>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 pull-left">
         <?php
 
         $furl = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
@@ -73,35 +74,37 @@ Template Name: Мебель
 </div>
 
 <div class="row mb-color-palette">
-<?php
 
-$colors = CFS()->get('furniture_color_paletts');
 
-foreach ($colors as $page_id) :
-
-    $page = get_post($page_id);
-
-    $post_thumbnail_id = get_post_thumbnail_id($page_id);
-    $attachment_url = wp_get_attachment_url($post_thumbnail_id);
-    //$alt = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
-
-    if (has_post_thumbnail($page->ID)) :
-
-        ?>
-        <div class="col-xs-6 col-sm-4 text-center">
-            <div class="mb-box">
-                <a href="<?php echo get_page_link($page_id); ?>">
-                    <img src="<?php echo $attachment_url ?>" alt=""/>
-                    <?php echo $page->post_title; ?>
-                </a>
-            </div>
-        </div>
     <?php
 
-    endif;
-endforeach;
+    $colors = CFS()->get('furniture_color_paletts');
 
-?>
+    if($colors) echo '<h2>Цветовая Палитра:</h2>';
+
+    foreach ($colors as $page_id) :
+
+        $page = get_post($page_id);
+
+        $post_thumbnail_id = get_post_thumbnail_id($page_id);
+        $attachment_url = wp_get_attachment_url($post_thumbnail_id);
+        //$alt = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
+
+        if (has_post_thumbnail($page->ID)) :
+
+            ?>
+            <div class="col-xs-6 col-md-3 col-lg-2 text-center">
+                <div class="mb-box">
+                    <img src="<?php echo $attachment_url ?>" class="img-responsive" alt=""/>
+                    <h3><?php echo $page->post_title; ?></h3>
+                </div>
+            </div>
+        <?php
+
+        endif;
+    endforeach;
+
+    ?>
 </div>
 
 
