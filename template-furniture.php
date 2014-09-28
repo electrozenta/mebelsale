@@ -73,38 +73,37 @@ Template Name: Мебель
     </div>
 </div>
 
-<div class="row mb-color-palette">
 
+<?php
 
-    <?php
+$colors = CFS()->get('furniture_color_paletts');
 
-    $colors = CFS()->get('furniture_color_paletts');
+if ($colors):
+    ?>
+    <h2>Цветовая Палитра:</h2>
+    <div class="mb-color-palette owl-carousel">
+        <?php
+        foreach ($colors as $page_id) :
 
-    if($colors) echo '<h2>Цветовая Палитра:</h2>';
+            $page = get_post($page_id);
 
-    foreach ($colors as $page_id) :
+            $post_thumbnail_id = get_post_thumbnail_id($page_id);
+            $attachment_url = wp_get_attachment_url($post_thumbnail_id);
+            //$alt = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
 
-        $page = get_post($page_id);
+            if (has_post_thumbnail($page->ID)) :
 
-        $post_thumbnail_id = get_post_thumbnail_id($page_id);
-        $attachment_url = wp_get_attachment_url($post_thumbnail_id);
-        //$alt = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
+                ?>
+                <div class="mb-box text-center">
+                    <img src="<?php echo $attachment_url ?>" class="mb-box" alt="<?php echo $page->post_title; ?>"/>
 
-        if (has_post_thumbnail($page->ID)) :
-
-            ?>
-            <div class="col-xs-6 col-md-3 col-lg-2 text-center">
-                <div class="mb-box">
-                    <img src="<?php echo $attachment_url ?>" class="img-responsive" alt=""/>
                     <h3><?php echo $page->post_title; ?></h3>
                 </div>
-            </div>
-        <?php
+            <?php
 
-        endif;
-    endforeach;
-
-    ?>
-</div>
-
+            endif;
+        endforeach;
+        ?>
+    </div>
+<?php endif; ?>
 

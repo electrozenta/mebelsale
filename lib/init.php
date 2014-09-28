@@ -101,3 +101,41 @@ function roots_widgets_init()
 }
 
 add_action('widgets_init', 'roots_widgets_init');
+
+
+
+//Shortcodes
+
+// Add Shortcode
+function bs3_row_shortcode( $atts , $content = null ) {
+
+    // Code
+    return '<div class="row">' . do_shortcode($content) . '</div>';
+}
+add_shortcode( 'row', 'bs3_row_shortcode' );
+
+
+// Add Shortcode
+function bs3_col_shortcode( $atts , $content = null ) {
+
+    // Attributes
+    extract( shortcode_atts(
+            array(
+                'n' => '2',
+            ), $atts )
+    );
+
+    // Code
+    //return printf( '<div class="col-sm-%s">%s</div>', 12 / $atts['n'], $c );
+    return '<div class="col-md-' . 12 / $n . '">' . do_shortcode($content) . '</div>';
+}
+add_shortcode( 'col', 'bs3_col_shortcode' );
+
+
+//Disable HTML in comments
+function disable_html_in_comments()
+{
+    global $allowedtags;
+    $allowedtags = array();
+}
+disable_html_in_comments();

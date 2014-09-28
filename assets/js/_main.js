@@ -85,6 +85,34 @@
                         }
                     });
                 }
+
+
+                //color palette template
+                var $colorCarousel = $('.mb-color-palette.owl-carousel');
+
+                if ($colorCarousel) {
+
+                    $colorCarousel.owlCarousel({
+                        nav: false,
+                        responsive: {
+                            0: {
+                                items: 2
+                            },
+                            480: {
+                                items: 2
+                            },
+                            768: {
+                                items: 3
+                            },
+                            992: {
+                                items: 4
+                            },
+                            1200: {
+                                items: 5
+                            }
+                        }
+                    });
+                }
             }
         },
         //Gallery template script
