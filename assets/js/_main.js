@@ -93,7 +93,8 @@
                 if ($colorCarousel) {
 
                     $colorCarousel.owlCarousel({
-                        nav: false,
+                        nav: true,
+                        margin:10,
                         responsive: {
                             0: {
                                 items: 2

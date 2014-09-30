@@ -8,9 +8,10 @@ Template Name: Галерея
     <?php
     $galleries = get_pages(array(
         'child_of' => $post->ID,
+        'parent' => $post->ID,
         'hierarchical' => 1,
-        'meta_key' => '_wp_page_template',
-        //'meta_value' => 'template-catalog.php',
+        //'meta_key' => '_wp_page_template',
+        //'meta_value' => 'template-gallery.php',
         'sort_column' => 'menu_order',
         'sort_order' => 'asc',
     ));
