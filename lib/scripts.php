@@ -26,8 +26,6 @@ function roots_scripts()
             'js' => '/assets/js/scripts.js',
             'modernizr' => '/assets/vendor/modernizr/modernizr.js',
             'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js',
-
-            'owl.js' => '/assets/js/plugins/owl/owl.carousel.js'
         );
     } else {
         $get_assets = file_get_contents(get_template_directory() . '/assets/manifest.json');
@@ -37,14 +35,10 @@ function roots_scripts()
             'js' => '/assets/js/scripts.min.js' . '?' . $assets['assets/js/scripts.min.js']['hash'],
             'modernizr' => '/assets/js/vendor/modernizr.min.js',
             'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-
-            'owl.js' => '/assets/js/plugins/owl/owl.carousel.min.js'
         );
     }
 
     wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
-    //wp_enqueue_style('owl_css', get_template_directory_uri() . $assets['owl.css'], false, null);
-    //wp_enqueue_style('owl_theme_css', get_template_directory_uri() . $assets['owl.theme.css'], false, null);
 
     /**
      * jQuery is loaded using the same method from HTML5 Boilerplate:
@@ -63,7 +57,6 @@ function roots_scripts()
 
     wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
     wp_enqueue_script('jquery');
-    wp_enqueue_script('owl_js', get_template_directory_uri() . $assets['owl.js'], array(), null, true);
     wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
 }
 
