@@ -27,8 +27,6 @@ function roots_scripts()
             'modernizr' => '/assets/vendor/modernizr/modernizr.js',
             'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js',
 
-            'owl.css' => '/assets/css/owl.carousel.css',
-            'owl.theme.css' => '/assets/css/owl.theme.min.css',
             'owl.js' => '/assets/js/plugins/owl/owl.carousel.js'
         );
     } else {
@@ -40,15 +38,13 @@ function roots_scripts()
             'modernizr' => '/assets/js/vendor/modernizr.min.js',
             'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
 
-            'owl.css' => '/assets/css/owl.carousel.css',
-            'owl.theme.css' => '/assets/css/owl.theme.min.css',
             'owl.js' => '/assets/js/plugins/owl/owl.carousel.min.js'
         );
     }
 
     wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
-    wp_enqueue_style('owl_css', get_template_directory_uri() . $assets['owl.css'], false, null);
-    wp_enqueue_style('owl_theme_css', get_template_directory_uri() . $assets['owl.theme.css'], false, null);
+    //wp_enqueue_style('owl_css', get_template_directory_uri() . $assets['owl.css'], false, null);
+    //wp_enqueue_style('owl_theme_css', get_template_directory_uri() . $assets['owl.theme.css'], false, null);
 
     /**
      * jQuery is loaded using the same method from HTML5 Boilerplate:

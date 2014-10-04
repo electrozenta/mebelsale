@@ -55,7 +55,7 @@ Template Name: Мебель
         $images = CFS()->get('furniture_images');
 
         ?>
-        <div class="mb-thumbnail-carousel owl-carousel">
+        <div class="mb-thumbnail-carousel text-center owl-carousel">
             <?php
             foreach ($images as $image) :
                 $id = $image['furniture_image'];
@@ -81,7 +81,7 @@ $colors = CFS()->get('furniture_color_paletts');
 if ($colors):
     ?>
     <h2>Цветовая Палитра:</h2>
-    <div class="mb-color-palette owl-carousel">
+    <div class="mb-color-palette owl-carousel text-center">
         <?php
         foreach ($colors as $page_id) :
 

@@ -68,7 +68,8 @@
                 if ($thumbnailCarousel) {
 
                     $thumbnailCarousel.owlCarousel({
-                        nav: false,
+                        nav: true,
+                        margin: 5,
                         responsive: {
                             0: {
                                 items: 2
@@ -94,6 +95,7 @@
 
                     $colorCarousel.owlCarousel({
                         nav: true,
+                        //navText: ['&#x27;next&#x27;','&#x27;prev&#x27;'],
                         margin:10,
                         responsive: {
                             0: {
