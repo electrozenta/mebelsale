@@ -12,6 +12,7 @@
 $roots_includes = array(
   'lib/utils.php',           // Utility functions
   'lib/init.php',            // Initial theme setup and constants
+  'lib/widgets.php',         // Custom menu for products
   'lib/wrapper.php',         // Theme wrapper class
   'lib/sidebar.php',         // Sidebar class
   'lib/config.php',          // Configuration

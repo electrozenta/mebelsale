@@ -11,7 +11,11 @@ function roots_setup()
     // Register wp_nav_menu() menus
     // http://codex.wordpress.org/Function_Reference/register_nav_menus
     register_nav_menus(array(
-        'primary_navigation' => __('Primary Navigation', 'roots')
+        'primary_navigation' => __('Главная', 'roots')
+    ));
+
+    register_nav_menus(array(
+        'secondary_navigation' => __('Подвал', 'roots')
     ));
 
     // Add post thumbnails
@@ -44,8 +48,17 @@ add_action('after_setup_theme', 'roots_setup');
 function roots_widgets_init()
 {
     register_sidebar(array(
-        'name' => __('Primary', 'roots'),
+        'name' => __('Боковая - первичный', 'roots'),
         'id' => 'sidebar-primary',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Боковая - вторичный', 'roots'),
+        'id' => 'sidebar-secondary',
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget' => '</section>',
         'before_title' => '<h3>',
