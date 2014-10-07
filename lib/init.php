@@ -152,3 +152,12 @@ function disable_html_in_comments()
     $allowedtags = array();
 }
 disable_html_in_comments();
+
+//disable website field in comments
+add_filter('comment_form_default_fields', 'url_filtered');
+function url_filtered($fields)
+{
+    if(isset($fields['url']))
+        unset($fields['url']);
+    return $fields;
+}
