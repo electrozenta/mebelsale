@@ -78,9 +78,12 @@
                                 items: 3
                             },
                             768: {
-                                items: 5
+                                items: 4
                             },
                             992: {
+                                items: 1
+                            },
+                            1200: {
                                 items: 2
                             }
                         }

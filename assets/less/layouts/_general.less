@@ -59,6 +59,7 @@ a.mb-box.mb-content {
   border: none;
   border-top: 1px solid #fff;
   box-shadow: #92674a 0 3px 2px 0;
+  transition-duration: 0.3s;
   background: rgb(223,237,244);
   background: -moz-linear-gradient(top, rgba(223,237,244,1) 0%, rgba(205,199,191,1) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(223,237,244,1)), color-stop(100%,rgba(205,199,191,1)));
@@ -71,6 +72,11 @@ a.mb-box.mb-content {
   &:hover {
     color: @link-hover-color;
     box-shadow: @link-hover-color 0 3px 2px 0;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
     text-decoration: none;
   }
 }

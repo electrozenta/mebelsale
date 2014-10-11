@@ -9,7 +9,38 @@ Template Name: Мебель
 <?php endwhile; ?>
 
 <div class="row">
-    <div class="col-md-8 pull-right">
+    <div class="col-md-4 text-center">
+        <?php
+
+        $furl = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+        $falt = CFS()->get('furniture_fimage_alt');
+        $fimg = get_the_post_thumbnail($page->ID, 'furniture details', array(
+            'class' => "img-responsive",
+            'alt' => trim($falt),
+        ));
+
+        printf('<a href="%s" class="mb-box mb-content" rel=”lightbox[gallery-furniture]”>%s</a>', $furl, $fimg);
+
+        $images = CFS()->get('furniture_images');
+
+        ?>
+        <div class="mb-thumbnail-carousel owl-carousel">
+            <?php
+            foreach ($images as $image) :
+                $id = $image['furniture_image'];
+                $alt = $image['furniture_image_alt'];
+                $img = wp_get_attachment_image($id, 'furniture small', 0, array(
+                    'class' => "img-responsive",
+                    "alt" => trim($alt),
+                ));
+                $url = wp_get_attachment_url($id);
+
+                printf('<a href="%s" class="mb-box mb-content mb-small item" rel=”lightbox[gallery-furniture]”>%s</a>', $url, $img);
+            endforeach;
+            ?>
+        </div>
+    </div>
+    <div class="col-md-8">
         <div class="mb-furniture-full mb-box mb-content">
             <?php
 
@@ -40,37 +71,7 @@ Template Name: Мебель
             <a href="#">вызвать замерщика</a>
         </div>
     </div>
-    <div class="col-md-4 pull-left">
-        <?php
 
-        $furl = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-        $falt = CFS()->get('furniture_fimage_alt');
-        $fimg = get_the_post_thumbnail($page->ID, 'furniture details', array(
-            'class' => "img-responsive",
-            'alt' => trim($falt),
-        ));
-
-        printf('<a href="%s" class="mb-box mb-content" rel=”lightbox[gallery-furniture]”>%s</a>', $furl, $fimg);
-
-        $images = CFS()->get('furniture_images');
-
-        ?>
-        <div class="mb-thumbnail-carousel text-center owl-carousel">
-            <?php
-            foreach ($images as $image) :
-                $id = $image['furniture_image'];
-                $alt = $image['furniture_image_alt'];
-                $img = wp_get_attachment_image($id, 'furniture small', 0, array(
-                    'class' => "img-responsive",
-                    "alt" => trim($alt),
-                ));
-                $url = wp_get_attachment_url($id);
-
-                printf('<a href="%s" class="mb-box mb-content mb-small item" rel=”lightbox[gallery-furniture]”>%s</a>', $url, $img);
-            endforeach;
-            ?>
-        </div>
-    </div>
 </div>
 
 
