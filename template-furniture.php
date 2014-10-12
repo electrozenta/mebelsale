@@ -66,10 +66,8 @@ Template Name: Мебель
             printf('<p class="mb-price">%s: %s руб.</p>', $price_label, $price);
 
             ?>
-            <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order"
-               data-url="<?php echo $url; ?>">купить</a>
-            <a href="#" class="mb-measurer" role="button" data-toggle="modal" data-target="#measure"
-               data-url="<?php echo $url; ?>">вызвать замерщика</a>
+            <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order">купить</a>
+            <a href="#" class="mb-measurer" role="button" data-toggle="modal" data-target="#measure">вызвать замерщика</a>
         </div>
     </div>
 
