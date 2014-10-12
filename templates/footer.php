@@ -17,5 +17,7 @@
 </footer>
 
 <?php get_template_part('templates/form', 'order'); ?>
+<?php get_template_part('templates/form', 'call'); ?>
+<?php get_template_part('templates/form', 'measure'); ?>
 
 <?php wp_footer(); ?>

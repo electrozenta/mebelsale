@@ -24,7 +24,6 @@
             init: function () {
                 // JavaScript to be fired on all pages
                 $('.mb-content-page').appendTo($('.main'));
-
             }
         },
         // Home page
