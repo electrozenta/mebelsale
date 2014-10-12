@@ -1,5 +1,16 @@
 <footer class="content-info" role="contentinfo">
     <div class="container">
+        <nav role="navigation" class="mb-footer-nav pull-right">
+            <?php
+            if (has_nav_menu('secondary_navigation')) :
+                wp_nav_menu(array(
+                    'theme_location' => 'secondary_navigation',
+                    'menu_class' => 'list-inline',
+                    'link_after' => '<span>&nbsp;/</span>'
+                ));
+            endif;
+            ?>
+        </nav>
         <?php dynamic_sidebar('footer-top'); ?>
         <div class="row">
             <div class="col-md-4">

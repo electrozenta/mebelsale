@@ -98,6 +98,7 @@ a.mb-box.mb-content {
   text-transform: uppercase;
   transform: rotate(-90deg);
   transform-origin: 100% 100% 0;
+  z-index: 9999;
 
   a {
     &:hover {
@@ -110,5 +111,18 @@ a {
   &:focus {
     outline: none;
     text-decoration: none;
+  }
+}
+
+.navbar-toggle {
+  .icon-bar {
+    width: 25px;
+    height: 3px;
+  }
+
+  &:hover {
+    .icon-bar {
+      background-color: lighten(@color-sidebar-link-hover, 30%);
+    }
   }
 }

@@ -15,15 +15,34 @@
  * ======================================================================== */
 
 (function ($) {
-
-// Use this variable to set up the common and page specific functions. If you 
-// rename this variable, you will also need to rename the namespace below.
+    // Use this variable to set up the common and page specific functions. If you
+    // rename this variable, you will also need to rename the namespace below.
     var Roots = {
         // All pages
         common: {
             init: function () {
                 // JavaScript to be fired on all pages
                 $('.mb-content-page').appendTo($('.main'));
+
+                var self = this;
+
+                $(window).resize(function(e) {
+                    clearTimeout(self.resizeTimer);
+                    self.resizeTimer = setTimeout(self.resizeFunction, 200);
+                });
+
+                this.resizeFunction();
+            },
+
+            resizeTimer: undefined,
+
+            resizeFunction: function() {
+                if ($(window).width() < 768) {
+                    $('.sidebar').appendTo($('.content'));
+                }
+                else {
+                    $('.sidebar').prependTo($('.content'));
+                }
             }
         },
         // Home page
@@ -98,7 +117,7 @@
                     $colorCarousel.owlCarousel({
                         nav: true,
                         //navText: ['&#x27;next&#x27;','&#x27;prev&#x27;'],
-                        margin:10,
+                        margin: 10,
                         responsive: {
                             0: {
                                 items: 2
