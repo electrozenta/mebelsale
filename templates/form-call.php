@@ -1,8 +1,8 @@
 <!-- Modal -->
 <div class="modal fade" id="call" tabindex="-1" role="dialog" aria-labelledby="callOrderModal" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <?php echo do_shortcode('[contact-form-7 id="966" title="Ззаказать обратный звонок"]'); ?>
+            <?php echo do_shortcode('[contact-form-7 id="966" title="Заказать обратный звонок"]'); ?>
         </div>
     </div>
 </div>

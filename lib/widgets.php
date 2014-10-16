@@ -80,3 +80,81 @@ class Mebel_Nav_Menu_Widget extends WP_Widget {
 add_action( 'widgets_init', function(){
     register_widget( 'Mebel_Nav_Menu_Widget' );
 });
+
+
+
+//Other Widgets
+
+/**
+ * Register sidebars
+ */
+function roots_widgets_init()
+{
+    register_sidebar(array(
+        'name' => __('Боковая - первичный', 'roots'),
+        'id' => 'sidebar-primary',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Боковая - вторичный', 'roots'),
+        'id' => 'sidebar-secondary',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+
+    //Footer
+
+    register_sidebar(array(
+        'name' => __('Подвал - верхняя область', 'roots'),
+        'id' => 'footer-top',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Подвал - середина 1/3', 'roots'),
+        'id' => 'footer-mid-1',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Подвал - середина 2/3', 'roots'),
+        'id' => 'footer-mid-2',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Подвал - середина 3/3', 'roots'),
+        'id' => 'footer-mid-3',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Подвал - Нижняя область', 'roots'),
+        'id' => 'footer-bottom',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+}
+
+add_action('widgets_init', 'roots_widgets_init');
+
