@@ -37,7 +37,7 @@
             resizeTimer: undefined,
 
             resizeFunction: function() {
-                if ($(window).width() < 768) {
+                if (Modernizr.mq('(max-width: 767px)')) {
                     $('.sidebar').appendTo($('.content'));
                 }
                 else {

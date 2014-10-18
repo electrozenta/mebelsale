@@ -30,7 +30,7 @@ Template Name: Мебель
                 $id = $image['furniture_image'];
                 $alt = $image['furniture_image_alt'];
                 $img = wp_get_attachment_image($id, 'furniture small', 0, array(
-                    'class' => "img-responsive",
+                    //'class' => "img-responsive",
                     "alt" => trim($alt),
                 ));
                 $url = wp_get_attachment_url($id);
