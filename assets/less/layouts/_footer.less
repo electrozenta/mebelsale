@@ -3,25 +3,36 @@
   font-size: 16px;
   margin-top: 15px;
 
-.mb-footer-nav {
-  ul li:last-child a span {
-    display: none;
+  .mb-footer-nav {
+    margin: 10px;
+
+    ul li:last-child a span {
+      display: none;
+    }
+
+    li {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+
+    a {
+      color: @color-footer-text;
+      font-size: 14px;
+    }
   }
 
-  li {
-    padding-left: 2px;
-    padding-right: 2px;
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 15px;
   }
 
   a {
-    color: @color-footer-text;
-    font-size: 14px;
-  }
-}
-}
+    color: #cc541e;
 
-.content-info h3 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+    &:hover {
+      color: lighten(#cc541e, 10%);
+    }
+  }
 }

@@ -4,14 +4,14 @@
 
 .navbar-brand {
   background: url(@logo) no-repeat;
+  background-size: contain;
   text-indent: -9999px;
-  width: 113px;
-  height: 153px;
+  height: 90px;
   margin: 0;
   padding: 0;
-  margin-top: 25px;
-  margin-bottom: 20px;
-  margin-left: 0 !important;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px !important;
 }
 
 @media (min-width: 768px) {
@@ -20,6 +20,13 @@
     background: url("@{img-path}/ghost-kitchen.png") no-repeat right top;
     background-position: right;
     background-size: 700px 100%;
+  }
+
+  .navbar-brand {
+    height: 153px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 0 !important;
   }
 
 }

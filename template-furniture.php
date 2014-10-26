@@ -95,8 +95,9 @@ if ($colors):
 
                 ?>
                 <div class="mb-box text-center">
-                    <img src="<?php echo $attachment_url ?>" class="mb-box" alt="<?php echo $page->post_title; ?>"/>
-
+                    <div class="mb-box">
+                        <img src="<?php echo $attachment_url ?>" alt="<?php echo $page->post_title; ?>"/>
+                    </div>
                     <h3><?php echo $page->post_title; ?></h3>
                 </div>
             <?php
