@@ -18,6 +18,16 @@
     a {
       color: @color-footer-text;
       font-size: 14px;
+
+      span {
+        padding-left: 8px;
+      }
+
+      &:hover {
+        span {
+          color: @color-footer-text;
+        }
+      }
     }
   }
 
@@ -29,10 +39,10 @@
   }
 
   a {
-    color: #cc541e;
+    color: lighten(#cc541e, 10%);
 
     &:hover {
-      color: lighten(#cc541e, 10%);
+      color: #cc541e;
     }
   }
 }

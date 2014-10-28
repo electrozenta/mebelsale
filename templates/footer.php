@@ -19,7 +19,7 @@
                     wp_nav_menu(array(
                         'theme_location' => 'secondary_navigation',
                         'menu_class' => 'list-inline',
-                        'link_after' => '<span>&nbsp;/</span>'
+                        'link_after' => '<span>|</span>'
                     ));
                 endif;
                 ?>
