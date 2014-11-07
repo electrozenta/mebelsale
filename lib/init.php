@@ -43,34 +43,76 @@ function roots_setup()
 add_action('after_setup_theme', 'roots_setup');
 
 
-
 //Shortcodes
 
 // Add Shortcode
-function bs3_row_shortcode( $atts , $content = null ) {
+function bs3_row_shortcode($atts, $content = null)
+{
 
     // Code
     return '<div class="row">' . do_shortcode($content) . '</div>';
 }
-add_shortcode( 'row', 'bs3_row_shortcode' );
+
+add_shortcode('row', 'bs3_row_shortcode');
 
 
 // Add Shortcode
-function bs3_col_shortcode( $atts , $content = null ) {
+function bs3_col_shortcode($atts, $content = null)
+{
 
     // Attributes
-    extract( shortcode_atts(
+    extract(shortcode_atts(
             array(
                 'n' => '2',
-            ), $atts )
+            ), $atts)
     );
 
     // Code
     //return printf( '<div class="col-sm-%s">%s</div>', 12 / $atts['n'], $c );
     return '<div class="col-md-' . 12 / $n . '">' . do_shortcode($content) . '</div>';
 }
-add_shortcode( 'col', 'bs3_col_shortcode' );
 
+add_shortcode('col', 'bs3_col_shortcode');
+
+
+//Furniture Shortcode
+function catalog_furniture_item($atts)
+{
+    // Attributes
+    extract(shortcode_atts(
+            array(
+                'id' => '',
+            ), $atts)
+    );
+
+    $item = get_post($id);
+
+
+    $alt = get_post_meta($item->ID, _aioseop_title, true);
+
+    $url = get_page_link($item->ID);
+
+    $price = CFS()->get('furniture_price', $item->ID);
+
+
+    $thumbnail = get_the_post_thumbnail($item->ID, 'furniture thumbnail', array(
+        "class" => "img-responsive",
+        "alt" => $alt
+    ));
+
+    $title = $item->post_title;
+
+
+    return sprintf( '<div class="mb-furniture-item mb-box">
+                        <a href="%s">%s</a>
+                        <h3><a href="%s">%s</a></h3>
+                        <p>Цена: %s руб.</p>
+                        <a href="%s" class="mb-details">подробнее...</a>
+                        <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order" data-url="%s">купить</a>
+                    </div>', $url, $thumbnail, $url, $title, $price, $url, $url);
+}
+
+add_shortcode('mebel', 'catalog_furniture_item');
 
 //Disable HTML in comments
 function disable_html_in_comments()
@@ -78,13 +120,14 @@ function disable_html_in_comments()
     global $allowedtags;
     $allowedtags = array();
 }
+
 disable_html_in_comments();
 
 //disable website field in comments
 add_filter('comment_form_default_fields', 'url_filtered');
 function url_filtered($fields)
 {
-    if(isset($fields['url']))
+    if (isset($fields['url']))
         unset($fields['url']);
     return $fields;
 }
