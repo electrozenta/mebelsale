@@ -103,7 +103,7 @@ function catalog_furniture_item($atts)
     $title = $item->post_title;
 
 
-    return sprintf( '<div class="mb-furniture-item mb-box">
+    return sprintf('<div class="mb-furniture-item mb-box">
                         <a href="%s">%s</a>
                         <h3><a href="%s">%s</a></h3>
                         <p>Цена: %s руб.</p>
@@ -113,6 +113,35 @@ function catalog_furniture_item($atts)
 }
 
 add_shortcode('mebel', 'catalog_furniture_item');
+
+
+//Gallery Item Shortcode
+
+function furniture_gallery_item($atts)
+{
+    // Attributes
+    extract(shortcode_atts(
+            array(
+                'id' => '',
+            ), $atts)
+    );
+
+    $gallery = get_post($id);
+
+    $url = get_page_link($gallery->ID);
+    $img = get_the_post_thumbnail($gallery->ID, "medium", array(
+        'class' => 'img-responsive'
+    ));
+    $title = $gallery->post_title;
+
+    return sprintf(
+        '<div class="mb-gallery-item mb-box">
+            <h2><a href="%s">%s%s</a></h2>
+        </div>', $url, $img, $title);
+}
+
+add_shortcode('mebelgallery', 'furniture_gallery_item');
+
 
 //Disable HTML in comments
 function disable_html_in_comments()

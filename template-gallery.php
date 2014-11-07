@@ -28,7 +28,7 @@ Template Name: Галерея
             $title = $gallery->post_title;
             ?>
             <div class="col-xs-6 col-sm-4">
-                <div class="mb-box">
+                <div class="mb-gallery-item mb-box">
                     <h2><a href="<?php echo get_page_link($gallery->ID); ?>"><?php echo $img; ?><?php echo $title; ?></a></h2>
                 </div>
             </div>

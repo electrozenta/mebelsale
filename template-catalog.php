@@ -64,7 +64,7 @@ Template Name: Каталог
             $price = CFS()->get('furniture_price', $item->ID);
 
             ?>
-            <li class="col-xs-6 col-sm-4 col-lg-3">
+            <li class="col-xs-6 col-sm-4 col-lg-3 text-center">
                 <div class="mb-furniture-item mb-box">
                     <a href="<?php echo $url; ?>">
                         <?php echo get_the_post_thumbnail( $item->ID, 'furniture thumbnail', array(
