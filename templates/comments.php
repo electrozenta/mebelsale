@@ -30,9 +30,7 @@ if (post_password_required()) {
             </div>
         <?php endif; ?>
     <?php elseif(!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
-        <div class="alert alert-warning">
-            <?php _e('Отзывы закрыты.', 'roots'); ?>
-        </div>
+
     <?php endif; ?>
 </section><!-- /#comments -->
 
