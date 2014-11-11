@@ -27,6 +27,7 @@ function roots_setup()
     add_image_size('furniture thumbnail', 150, 200, array('center', 'center'));
     add_image_size('furniture details', 200, 260, array('center', 'center'));
     add_image_size('furniture small', 85, 115, array('center', 'center'));
+    add_image_size('furniture gallery', 232, 174, array('center', 'center'));
 
     // Add post formats
     // http://codex.wordpress.org/Post_Formats

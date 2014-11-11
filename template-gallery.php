@@ -22,7 +22,7 @@ Template Name: Галерея
 
         foreach ($galleries as $gallery) {
             $url = wp_get_attachment_url( get_post_thumbnail_id($gallery->ID) );
-            $img = get_the_post_thumbnail( $gallery->ID, "medium", array(
+            $img = get_the_post_thumbnail( $gallery->ID, "furniture gallery", array(
                 'class' => 'img-responsive'
             ) );
             $title = $gallery->post_title;
