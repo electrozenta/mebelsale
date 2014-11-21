@@ -27,7 +27,7 @@ function roots_setup()
     add_image_size('furniture thumbnail', 150, 200, array('center', 'center'));
     add_image_size('furniture details', 200, 260, array('center', 'center'));
     add_image_size('furniture small', 85, 115, array('center', 'center'));
-    add_image_size('furniture gallery', 232, 174, array('center', 'center'));
+    add_image_size('furniture gallery', 360, 270, array('center', 'center'));
 
     // Add post formats
     // http://codex.wordpress.org/Post_Formats
@@ -130,7 +130,7 @@ function furniture_gallery_item($atts)
     $gallery = get_post($id);
 
     $url = get_page_link($gallery->ID);
-    $img = get_the_post_thumbnail($gallery->ID, "medium", array(
+    $img = get_the_post_thumbnail($gallery->ID, "furniture gallery", array(
         'class' => 'img-responsive'
     ));
     $title = $gallery->post_title;
