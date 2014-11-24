@@ -41,7 +41,7 @@ Template Name: Мебель
         </div>
     </div>
     <div class="col-md-8">
-        <div class="mb-furniture-full mb-box mb-content">
+        <div class="mb-furniture-full mb-box mb-content clearfix">
             <?php
 
             the_title('<h1>', '</h1>');
@@ -66,8 +66,8 @@ Template Name: Мебель
             printf('<p class="mb-price">%s: %s руб.</p>', $price_label, $price);
 
             ?>
-            <a href="#" class="mb-btn-buy" role="button" data-toggle="modal" data-target="#order">купить</a>
-            <a href="#" class="mb-measurer" role="button" data-toggle="modal" data-target="#measure">вызвать замерщика</a>
+            <a href="#" class="mb-btn-buy pull-left" role="button" data-toggle="modal" data-target="#order">купить</a>
+            <a href="#" class="mb-btn-buy pull-right" role="button" data-toggle="modal" data-target="#measure">вызвать замерщика</a>
         </div>
     </div>
 
