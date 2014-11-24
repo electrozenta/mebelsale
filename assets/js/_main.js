@@ -28,7 +28,7 @@
 
                 $(window).resize(function(e) {
                     clearTimeout(self.resizeTimer);
-                    self.resizeTimer = setTimeout(self.resizeFunction, 200);
+                    self.resizeTimer = setTimeout(self.resizeFunction, 50);
                 });
 
                 this.resizeFunction();
