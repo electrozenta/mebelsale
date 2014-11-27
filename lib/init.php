@@ -46,6 +46,17 @@ add_action('after_setup_theme', 'roots_setup');
 
 //Shortcodes
 
+
+// Add Shortcode
+function bs3_center_shortcode($atts, $content = null)
+{
+
+    // Code
+    return '<div class="text-center">' . do_shortcode($content) . '</div>';
+}
+
+add_shortcode('center', 'bs3_center_shortcode');
+
 // Add Shortcode
 function bs3_row_shortcode($atts, $content = null)
 {
