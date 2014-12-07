@@ -10,28 +10,29 @@
  * @link https://github.com/roots/roots/pull/1042
  */
 $roots_includes = array(
-  'lib/utils.php',           // Utility functions
-  'lib/init.php',            // Initial theme setup and constants
-  'lib/widgets.php',         // Custom menu for products
-  'lib/wrapper.php',         // Theme wrapper class
-  'lib/sidebar.php',         // Sidebar class
-  'lib/config.php',          // Configuration
-  'lib/activation.php',      // Theme activation
-  'lib/titles.php',          // Page titles
-  'lib/nav.php',             // Custom nav modifications
-  'lib/gallery.php',         // Custom [gallery] modifications
-  'lib/comments.php',        // Custom comments modifications
-  'lib/scripts.php',         // Scripts and stylesheets
-  'lib/extras.php',          // Custom functions
-  //'lib/cpt-furniture.php',   // Custom Post Type "Furniture"
-  'lib/cpt-color-palette.php', // Custom Post Type "Color-Palette"
+    'lib/utils.php',           // Utility functions
+    'lib/init.php',            // Initial theme setup and constants
+    'lib/widgets.php',         // Custom menu for products
+    'lib/wrapper.php',         // Theme wrapper class
+    'lib/sidebar.php',         // Sidebar class
+    'lib/config.php',          // Configuration
+    'lib/activation.php',      // Theme activation
+    'lib/titles.php',          // Page titles
+    'lib/nav.php',             // Custom nav modifications
+    'lib/gallery.php',         // Custom [gallery] modifications
+    'lib/comments.php',        // Custom comments modifications
+    'lib/scripts.php',         // Scripts and stylesheets
+    'lib/extras.php',          // Custom functions
+    //'lib/cpt-furniture.php',   // Custom Post Type "Furniture"
+    'lib/cpt-color-palette.php', // Custom Post Type "Color-Palette"
+    'lib/breadcrumbs.php',     // Breadcrumbs for BS3
 );
 
 foreach ($roots_includes as $file) {
-  if (!$filepath = locate_template($file)) {
-    trigger_error(sprintf(__('Error locating %s for inclusion', 'roots'), $file), E_USER_ERROR);
-  }
+    if (!$filepath = locate_template($file)) {
+        trigger_error(sprintf(__('Error locating %s for inclusion', 'roots'), $file), E_USER_ERROR);
+    }
 
-  require_once $filepath;
+    require_once $filepath;
 }
 unset($file, $filepath);

@@ -21,6 +21,11 @@
                   </aside><!-- /.sidebar -->
               <?php endif; ?>
               <main class="main <?php echo roots_main_class(); ?>" role="main">
+                  <?php
+                  if ( function_exists('roots_bs3_breadcrumb') ) {
+                      roots_bs3_breadcrumb();
+                  }
+                  ?>
                   <?php include roots_template_path(); ?>
               </main><!-- /.main -->
           </div><!-- /.content -->
