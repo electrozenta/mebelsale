@@ -4,9 +4,9 @@ function roots_bs3_breadcrumb() {
 
     /* === OPTIONS === */
     $text['home']     = 'Главная'; // text for the 'Home' link
-    $text['category'] = 'Archive by Category "%s"'; // text for a category page
+    $text['category'] = '%s'; // text for a category page
     $text['search']   = 'Результаты поиска'; // text for a search results page
-    $text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
+    $text['tag']      = 'Записи с меткой "%s"'; // text for a tag page
     $text['author']   = 'Articles Posted by %s'; // text for an author page
     $text['404']      = 'Не найдено'; // text for the 404 page
 
