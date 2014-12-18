@@ -2,6 +2,31 @@
   margin-bottom: 0;
 }
 
+.mb-widget-header {
+  position: relative;
+
+  .widget {
+    position: absolute;
+    right: 40px;
+    top: 25px;
+    color: #c09e83;
+    font-size: 16px;
+
+    address {
+      vertical-align: top;
+    }
+
+    a {
+      color: lighten(#cc541e, 10%);
+      vertical-align: top;
+
+      &:hover {
+        color: #cc541e;
+      }
+    }
+  }
+}
+
 .navbar-brand {
   background: url(@logo) no-repeat;
   background-size: contain;
@@ -19,6 +44,16 @@
   .navbar-header {
     background: url("@{img-path}/ghost-kitchen.png") no-repeat 60% 100%;
     background-size: cover;
+  }
+
+  .mb-widget-header {
+    .widget {
+      right: 80px;
+      top: 15px;
+      address {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
@@ -44,7 +79,7 @@
 @media (min-width: 992px) {
   .navbar-nav {
     float: right;
-    margin-top: 148px;
+    margin-top: -50px;
   }
 
   .banner {

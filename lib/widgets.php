@@ -117,6 +117,17 @@ function roots_widgets_init()
         'after_title' => '</h3>',
     ));
 
+    //Header
+
+    register_sidebar(array(
+        'name' => __('Шапка - верхняя область', 'roots'),
+        'id' => 'header-top',
+        'before_widget' => '<section class="widget %1$s %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+
     //Footer
 
     register_sidebar(array(

@@ -8,6 +8,9 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+        <div class="container mb-widget-header">
+            <?php dynamic_sidebar('header-top'); ?>
+        </div>
     </div>
 
     <nav class="collapse navbar-collapse" role="navigation">
